@@ -1,146 +1,52 @@
-<!doctype html>
+<!DOCTYPE html>
 <html lang="en">
 <head>
-  <meta charset="utf-8">
-  <meta name="viewport" content="width=device-width,initial-scale=1">
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>Zerca's SIMPLSYA Grill & Restaurant</title>
-  <meta name="description" content="Zerca's SIMPLSYA Grill & Restaurant — Rustic grilled specialties, homemade sauces, catering & events in Imus, Cavite.">
-  <link rel="preconnect" href="https://fonts.googleapis.com">
-  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-  <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@500;700&family=Inter:wght@300;400;600&display=swap" rel="stylesheet">
-  <link rel="stylesheet" href="assets/css/styles.css">
-</head>
-<body>
-  <header class="site-header">
-    <nav class="topnav">
-      <a class="brand" href="#">Zerca's SIMPLSYA</a>
-      <button id="menu-toggle" class="menu-toggle" aria-label="Toggle menu">☰</button>
-      <ul class="nav-links" id="nav-links">
-        <li><a href="#about">About</a></li>
-        <li><a href="#menu">Menu</a></li>
-        <li><a href="#services">Services</a></li>
-        <li><a href="#gallery">Gallery</a></li>
-        <li><a href="#contact">Contact</a></li>
-      </ul>
-    </nav>
-
-    <div class="hero">
-      <div class="hero-inner">
-        <h1>Zerca's SIMPLSYA Grill & Restaurant</h1>
-        <p class="tagline">Rustic flavors • Homemade sauces • Warm hospitality</p>
-        <div class="hero-cta">
-          <a class="btn" href="#menu">View Menu</a>
-          <a class="btn outline" href="#contact">Reserve</a>
-        </div>
-      </div>
-      <div class="hero-image" aria-hidden="true"></div>
-    </div>
-  </header>
-
-  <main>
-    <section id="about" class="section about">
-      <div class="container">
-        <h2>About Us</h2>
-        <p>Welcome to Zerca's SIMPLSYA — a family-run grill and restaurant in Imus, Cavite. We celebrate charcoal-grilled specialties and house-made sauces inspired by local flavors. Whether you want a cozy dinner or catering for a special event, we bring authentic, rustic flavors to your table.</p>
-      </div>
-    </section>
-
-    <section id="menu" class="section menu">
-      <div class="container">
-        <h2>Our Menu</h2>
-        <p class="lead">Hand-selected starters, grilled mains, signature sauces, and refreshing drinks.</p>
-        <div class="menu-grid">
-          <article class="menu-item">
-            <h3>Charcoal-Grilled Liempo</h3>
-            <p class="price">₱320</p>
-            <p>Marinated in our smoky house blend and charred to perfection. Served with rice and choice of sauce.</p>
-          </article>
-
-          <article class="menu-item">
-            <h3>Smothered Chicken BBQ</h3>
-            <p class="price">₱260</p>
-            <p>Tender chicken brushed with sweet-savory glaze and finished on the grill.</p>
-          </article>
-
-          <article class="menu-item">
-            <h3>Grilled Veggie Platter (V)</h3>
-            <p class="price">₱220</p>
-            <p>Seasonal vegetables grilled and drizzled with herb vinaigrette.</p>
-          </article>
-
-          <article class="menu-item">
-            <h3>Signature Sampler</h3>
-            <p class="price">₱480</p>
-            <p>A share platter of our best grilled meats, sides, and two signature sauces.</p>
-          </article>
-        </div>
-
-        <p class="download"><a href="menu.pdf" target="_blank">Download full menu (PDF)</a></p>
-      </div>
-    </section>
-
-    <section id="services" class="section services">
-      <div class="container">
-        <h2>Services</h2>
-        <ul class="services-list">
-          <li>Catering packages for parties and corporate events</li>
-          <li>Grazing tables & event set-ups</li>
-          <li>Mobile bar for weddings and celebrations</li>
-          <li>Private bookings and group menus</li>
-        </ul>
-      </div>
-    </section>
-
-    <section id="gallery" class="section gallery">
-      <div class="container">
-        <h2>Gallery</h2>
-        <div class="gallery-grid">
-          <img src="https://images.unsplash.com/photo-1543353071-087092ec393e?q=80&w=900&auto=format&fit=crop&ixlib=rb-4.0.3&s=0d4f0fbfbe7c9f3a6c2b9b6a09a8a5f4" alt="Grilled skewers">
-          <img src="https://images.unsplash.com/photo-1525755662778-989d0524087e?q=80&w=900&auto=format&fit=crop&ixlib=rb-4.0.3&s=6c9d1d5a6f3c8d97f4a4e9f8f3b6d6e1" alt="Rustic dining setup">
-          <img src="https://images.unsplash.com/photo-1504674900247-0877df9cc836?q=80&w=900&auto=format&fit=crop&ixlib=rb-4.0.3&s=8b0b8bffedc4c0f0f4b6a4e1e4d1a2b3" alt="Signature sauce and sides">
-        </div>
-      </div>
-    </section>
-
-    <section id="contact" class="section contact">
-      <div class="container">
-        <h2>Contact & Reservations</h2>
-        <p>📍 Imus, Cavite, Philippines</p>
-        <p>📞 <a href="tel:09178710632">0917 871 0632</a></p>
-        <p>📧 <a href="mailto:simplsya@restaurant.com">simplsya@restaurant.com</a></p>
-        <p><a href="https://facebook.com/simplsya" target="_blank" rel="noopener">Visit us on Facebook</a></p>
-
-        <form id="reservation-form" class="reservation" action="#" method="post" onsubmit="return submitReservation(event)">
-          <label>
-            Name
-            <input type="text" name="name" id="res-name" required>
-          </label>
-          <label>
-            Phone
-            <input type="tel" name="phone" id="res-phone" required>
-          </label>
-          <label>
-            Date & Time
-            <input type="datetime-local" name="datetime" id="res-datetime" required>
-          </label>
-          <label>
-            Guests
-            <input type="number" name="guests" id="res-guests" min="1" value="2" required>
-          </label>
-          <button class="btn" type="submit">Request Reservation</button>
-          <p class="form-note">Note: This form sends a request to your email when integrated with a backend. For quick booking, call us at the number above.</p>
-        </form>
-      </div>
-    </section>
-  </main>
-
-  <footer class="site-footer">
-    <div class="container">
-      <p>&copy; 2026 Zerca's SIMPLSYA Grill & Restaurant — All rights reserved.</p>
-      <p class="credits">Website by Zerca — Built with care</p>
-    </div>
-  </footer>
-
-  <script src="assets/js/main.js"></script>
-</body>
-</html>
+  <style>
+    body {
+      margin: 0;
+      font-family: 'Segoe UI', sans-serif;
+      background-color: #fdfaf6;
+      color: #333;
+    }
+    header {
+      background: url('logo.jpg') no-repeat center;
+      background-size: contain;
+      height: 200px;
+    }
+    nav {
+      background-color: #5a2e1f;
+      padding: 10px;
+      text-align: center;
+    }
+    nav a {
+      color: #fff;
+      margin: 0 15px;
+      text-decoration: none;
+      font-weight: bold;
+    }
+    .hero {
+      background: url('wood-texture.jpg') center/cover no-repeat;
+      color: #fff;
+      text-align: center;
+      padding: 100px 20px;
+    }
+    .hero h1 {
+      font-size: 3em;
+      margin: 0;
+    }
+    .section {
+      padding: 50px 20px;
+      max-width: 1000px;
+      margin: auto;
+    }
+    .services {
+      display: flex;
+      justify-content: space-around;
+      flex-wrap: wrap;
+    }
+    .service-card {
+      background: #fff;
+      border: 2px solid #ddd
