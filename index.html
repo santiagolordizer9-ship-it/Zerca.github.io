@@ -12,20 +12,70 @@
       color: #333;
     }
     header {
-      background: url('logo.jpg') no-repeat center;
-      background-size: contain;
-      height: 200px;
+      background: linear-gradient(135deg, #5a2e1f 0%, #8b4513 100%);
+      padding: 40px 20px;
+      text-align: center;
+      box-shadow: 0 4px 12px rgba(0,0,0,0.15);
+      position: relative;
+      overflow: hidden;
+    }
+    header::before {
+      content: '';
+      position: absolute;
+      top: -50%;
+      right: -10%;
+      width: 400px;
+      height: 400px;
+      background: rgba(255,255,255,0.05);
+      border-radius: 50%;
+      pointer-events: none;
+    }
+    header img {
+      max-width: 280px;
+      height: auto;
+      display: block;
+      margin: 0 auto 20px;
+      filter: drop-shadow(0 6px 12px rgba(0,0,0,0.2));
+      transition: transform 0.3s ease;
+      position: relative;
+      z-index: 1;
+    }
+    header img:hover {
+      transform: scale(1.05);
+    }
+    header h1 {
+      margin: 0;
+      font-size: 2em;
+      color: #fff;
+      font-weight: 700;
+      letter-spacing: 1px;
+      text-shadow: 2px 2px 4px rgba(0,0,0,0.3);
+      position: relative;
+      z-index: 1;
+    }
+    header p {
+      margin: 8px 0 0 0;
+      color: #f0e6d2;
+      font-size: 1.1em;
+      font-style: italic;
+      position: relative;
+      z-index: 1;
     }
     nav {
       background-color: #5a2e1f;
       padding: 10px;
       text-align: center;
+      border-top: 3px solid #d4a574;
     }
     nav a {
       color: #fff;
       margin: 0 15px;
       text-decoration: none;
       font-weight: bold;
+      transition: color 0.3s ease;
+    }
+    nav a:hover {
+      color: #d4a574;
     }
     .hero {
       background: url('https://images.unsplash.com/photo-1546484396-fb3fc6f95f98?w=1200&h=400&fit=crop') center/cover no-repeat;
@@ -67,7 +117,11 @@
 </head>
 <body>
 
-  <header></header>
+  <header>
+    <img src="logo.jpg" alt="Zerca's SIMPLSYA Grill & Restaurant Logo">
+    <h1>ZERCA'S SIMPLSYA</h1>
+    <p>Grill & Restaurant</p>
+  </header>
 
   <nav>
     <a href="#about">About Us</a>
