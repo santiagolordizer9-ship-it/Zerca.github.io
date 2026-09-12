@@ -5,119 +5,74 @@
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>Zerca's SIMPLSYA Grill & Restaurant</title>
   <style>
-    :root {
-      --bg-color: #fdf6ec;
-      --text-color: #3e2c1c;
-      --nav-bg: #3e2c1c;
-      --nav-text: #fdf6ec;
-      --accent: #ffcc66;
-    }
-
-    body.dark-mode {
-      --bg-color: #1a1a1a;
-      --text-color: #fdf6ec;
-      --nav-bg: #111;
-      --nav-text: #ffcc66;
-      --accent: #ff9933;
-    }
-
     body {
       margin: 0;
       font-family: 'Segoe UI', sans-serif;
-      background-color: var(--bg-color);
-      color: var(--text-color);
-      transition: background-color 0.3s, color 0.3s;
+      background-color: #fdf6ec;
+      color: #3e2c1c;
     }
-
     header {
       background: url('rustic-wood-bg.jpg') no-repeat center center/cover;
       color: white;
       text-align: center;
       padding: 80px 20px;
     }
-
     header h1 {
       font-size: 3em;
       margin: 0;
     }
-
     header p {
       font-size: 1.2em;
       margin-top: 10px;
     }
-
     nav {
-      background-color: var(--nav-bg);
+      background-color: #3e2c1c;
       display: flex;
       justify-content: center;
       padding: 10px;
     }
-
     nav a {
-      color: var(--nav-text);
+      color: #fdf6ec;
       text-decoration: none;
       margin: 0 15px;
       font-weight: bold;
     }
-
     nav a:hover {
-      color: var(--accent);
+      color: #ffcc66;
     }
-
     .hero-buttons {
       margin-top: 20px;
     }
-
     .hero-buttons a {
-      background-color: var(--accent);
-      color: var(--nav-bg);
+      background-color: #ffcc66;
+      color: #3e2c1c;
       padding: 12px 20px;
       margin: 10px;
       text-decoration: none;
       border-radius: 5px;
       font-weight: bold;
     }
-
     section {
       padding: 40px 20px;
       text-align: center;
     }
-
     section h2 {
       font-size: 2em;
       margin-bottom: 20px;
     }
-
     footer {
-      background-color: var(--nav-bg);
-      color: var(--nav-text);
+      background-color: #3e2c1c;
+      color: #fdf6ec;
       text-align: center;
       padding: 20px;
     }
-
     footer a {
-      color: var(--accent);
+      color: #ffcc66;
       text-decoration: none;
-    }
-
-    /* Dark mode toggle button */
-    #darkModeToggle {
-      position: fixed;
-      top: 15px;
-      right: 15px;
-      background: var(--accent);
-      color: var(--nav-bg);
-      border: none;
-      padding: 10px 15px;
-      border-radius: 5px;
-      cursor: pointer;
-      font-weight: bold;
     }
   </style>
 </head>
 <body>
-
-  <button id="darkModeToggle">🌙 Dark Mode</button>
 
   <header>
     <h1>Zerca's SIMPLSYA Grill & Restaurant</h1>
@@ -170,14 +125,6 @@
   <footer>
     <p>&copy; 2026 Zerca's SIMPLSYA Grill & Restaurant | Designed with rustic elegance</p>
   </footer>
-
-  <script>
-    const toggleBtn = document.getElementById('darkModeToggle');
-    toggleBtn.addEventListener('click', () => {
-      document.body.classList.toggle('dark-mode');
-      toggleBtn.textContent = document.body.classList.contains('dark-mode') ? '☀️ Light Mode' : '🌙 Dark Mode';
-    });
-  </script>
 
 </body>
 </html>
