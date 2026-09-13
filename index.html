@@ -190,6 +190,10 @@
       overflow-y: auto;
       animation: slideIn 0.3s ease;
       box-shadow: 0 10px 40px rgba(0,0,0,0.3);
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      text-align: center;
     }
     @keyframes slideIn {
       from {
@@ -214,12 +218,15 @@
       color: #5a2e1f;
       margin: 0 0 15px 0;
       font-weight: 700;
+      width: 100%;
     }
     .modal-description {
       font-size: 1.1em;
       line-height: 1.8;
       color: #333;
       margin: 0;
+      text-align: justify;
+      width: 100%;
     }
     .close-btn {
       position: absolute;
@@ -241,6 +248,61 @@
       color: #fff;
       text-align: center;
       padding: 20px;
+    }
+
+    /* Mobile Responsive Styles */
+    @media (max-width: 768px) {
+      .hero h1 {
+        font-size: 2em;
+      }
+      .modal-content {
+        padding: 20px;
+        max-width: 95%;
+      }
+      .modal-image {
+        max-width: 100%;
+      }
+      .modal-title {
+        font-size: 1.4em;
+      }
+      .modal-description {
+        font-size: 0.95em;
+        text-align: justify;
+      }
+      nav a {
+        margin: 0 10px;
+        font-size: 0.9em;
+      }
+    }
+
+    @media (max-width: 480px) {
+      .modal-content {
+        padding: 15px;
+        max-width: 100%;
+        margin: 10px;
+      }
+      .modal-image {
+        max-width: 100%;
+      }
+      .modal-title {
+        font-size: 1.2em;
+      }
+      .modal-description {
+        font-size: 0.9em;
+        text-align: justify;
+      }
+      .close-btn {
+        right: 10px;
+        font-size: 1.5em;
+      }
+      nav a {
+        margin: 0 8px;
+        font-size: 0.8em;
+      }
+      .service-card {
+        width: 100%;
+        margin: 10px 0;
+      }
     }
   </style>
 </head>
