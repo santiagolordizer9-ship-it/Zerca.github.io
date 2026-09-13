@@ -155,6 +155,87 @@
       font-size: 0.95em;
       line-height: 1.5;
     }
+    /* Modal Styles */
+    .modal {
+      display: none;
+      position: fixed;
+      z-index: 1000;
+      left: 0;
+      top: 0;
+      width: 100%;
+      height: 100%;
+      background-color: rgba(0, 0, 0, 0.8);
+      animation: fadeIn 0.3s ease;
+    }
+    .modal.active {
+      display: flex;
+      align-items: center;
+      justify-content: center;
+    }
+    @keyframes fadeIn {
+      from {
+        opacity: 0;
+      }
+      to {
+        opacity: 1;
+      }
+    }
+    .modal-content {
+      position: relative;
+      background-color: #fff;
+      padding: 30px;
+      border-radius: 12px;
+      max-width: 90%;
+      max-height: 90vh;
+      overflow-y: auto;
+      animation: slideIn 0.3s ease;
+      box-shadow: 0 10px 40px rgba(0,0,0,0.3);
+    }
+    @keyframes slideIn {
+      from {
+        transform: translateY(-50px);
+        opacity: 0;
+      }
+      to {
+        transform: translateY(0);
+        opacity: 1;
+      }
+    }
+    .modal-image {
+      width: 100%;
+      max-width: 800px;
+      height: auto;
+      border-radius: 8px;
+      margin-bottom: 20px;
+      display: block;
+    }
+    .modal-title {
+      font-size: 1.8em;
+      color: #5a2e1f;
+      margin: 0 0 15px 0;
+      font-weight: 700;
+    }
+    .modal-description {
+      font-size: 1.1em;
+      line-height: 1.8;
+      color: #333;
+      margin: 0;
+    }
+    .close-btn {
+      position: absolute;
+      top: 15px;
+      right: 25px;
+      font-size: 2em;
+      font-weight: bold;
+      color: #5a2e1f;
+      cursor: pointer;
+      background: none;
+      border: none;
+      transition: color 0.3s ease;
+    }
+    .close-btn:hover {
+      color: #d4a574;
+    }
     footer {
       background-color: #5a2e1f;
       color: #fff;
@@ -208,36 +289,37 @@
 
   <section id="grazing" class="section">
     <h2>Grazing Table Gallery</h2>
+    <p style="text-align: center; color: #666; font-size: 0.95em;">Click any image to view full details</p>
     <div class="gallery">
-      <div class="gallery-item">
+      <div class="gallery-item" onclick="openModal('Combination.jpg', 'Combination Platter', 'A delightful mix of our signature grilled meats, fresh vegetables, and artisan cheeses—perfect for sharing and sampling diverse flavors.')">
         <img src="Combination.jpg" alt="Combination platter">
         <div class="gallery-description">
           <h3>Combination Platter</h3>
           <p>A delightful mix of our signature grilled meats, fresh vegetables, and artisan cheeses—perfect for sharing and sampling diverse flavors.</p>
         </div>
       </div>
-      <div class="gallery-item">
+      <div class="gallery-item" onclick="openModal('Filipino Kakanin.jpg', 'Filipino Kakanin', 'Authentic Filipino sweet treats and traditional pastries that bring warmth and nostalgia to your celebration. Perfect complement to any grazing spread.')">
         <img src="Filipino Kakanin.jpg" alt="Filipino kakanin desserts">
         <div class="gallery-description">
           <h3>Filipino Kakanin</h3>
           <p>Authentic Filipino sweet treats and traditional pastries that bring warmth and nostalgia to your celebration. Perfect complement to any grazing spread.</p>
         </div>
       </div>
-      <div class="gallery-item">
+      <div class="gallery-item" onclick="openModal('Grazing.jpg', 'Elegant Grazing Table', 'Our signature grazing experience featuring an impressive selection of cured meats, fresh fruits, artisan breads, and gourmet spreads—ideal for upscale events.')">
         <img src="Grazing.jpg" alt="Elegant grazing table">
         <div class="gallery-description">
           <h3>Elegant Grazing Table</h3>
           <p>Our signature grazing experience featuring an impressive selection of cured meats, fresh fruits, artisan breads, and gourmet spreads—ideal for upscale events.</p>
         </div>
       </div>
-      <div class="gallery-item">
+      <div class="gallery-item" onclick="openModal('Slider.jpg', 'Gourmet Sliders', 'Bite-sized perfection! Our mini sliders showcase tender, grilled meats with fresh toppings—a crowd-pleasing favorite for any gathering.')">
         <img src="Slider.jpg" alt="Gourmet sliders">
         <div class="gallery-description">
           <h3>Gourmet Sliders</h3>
           <p>Bite-sized perfection! Our mini sliders showcase tender, grilled meats with fresh toppings—a crowd-pleasing favorite for any gathering.</p>
         </div>
       </div>
-      <div class="gallery-item">
+      <div class="gallery-item" onclick="openModal('Tusok-Tusok.jpg', 'Tusok-Tusok Skewers', 'Traditional Filipino street food on a stick! Tender grilled meats and vegetables perfectly seasoned and presented for easy, delicious snacking.')">
         <img src="Tusok-Tusok.jpg" alt="Tusok-tusok skewers">
         <div class="gallery-description">
           <h3>Tusok-Tusok Skewers</h3>
@@ -246,6 +328,16 @@
       </div>
     </div>
   </section>
+
+  <!-- Modal -->
+  <div id="imageModal" class="modal" onclick="closeModal(event)">
+    <div class="modal-content" onclick="event.stopPropagation()">
+      <button class="close-btn" onclick="closeModal()">&times;</button>
+      <img id="modalImage" class="modal-image" src="" alt="">
+      <h2 id="modalTitle" class="modal-title"></h2>
+      <p id="modalDescription" class="modal-description"></p>
+    </div>
+  </div>
 
   <section id="contact" class="section">
     <h2>Contact Us</h2>
@@ -258,6 +350,35 @@
   <footer>
     <p>© 2026 Zerca's SIMPLSYA Grill & Restaurant | Rustic Dining with Elegance</p>
   </footer>
+
+  <script>
+    function openModal(imageSrc, title, description) {
+      const modal = document.getElementById('imageModal');
+      const modalImage = document.getElementById('modalImage');
+      const modalTitle = document.getElementById('modalTitle');
+      const modalDescription = document.getElementById('modalDescription');
+      
+      modalImage.src = imageSrc;
+      modalTitle.textContent = title;
+      modalDescription.textContent = description;
+      
+      modal.classList.add('active');
+      document.body.style.overflow = 'hidden';
+    }
+    
+    function closeModal(event) {
+      const modal = document.getElementById('imageModal');
+      modal.classList.remove('active');
+      document.body.style.overflow = 'auto';
+    }
+    
+    // Close modal when pressing Escape key
+    document.addEventListener('keydown', function(event) {
+      if (event.key === 'Escape') {
+        closeModal();
+      }
+    });
+  </script>
 
 </body>
 </html>
