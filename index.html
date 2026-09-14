@@ -4,79 +4,185 @@
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>Zerca's SIMPLSYA Grill & Restaurant</title>
+  <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@600;700;800&family=Inter:wght@400;500;600&display=swap" rel="stylesheet">
   <style>
     body {
       margin: 0;
-      font-family: 'Segoe UI', sans-serif;
+      font-family: 'Inter', sans-serif;
       background-color: #f5f1e8;
       color: #333;
     }
     header {
-      background: linear-gradient(135deg, #adadad 0%, #0b0703 100%);
-      padding: 40px 20px;
+      background: linear-gradient(135deg, #0f0f0f 0%, #1a1a1a 50%, #2d1810 100%);
+      padding: 50px 20px;
       text-align: center;
-      box-shadow: 0 4px 12px rgba(0,0,0,0.15);
       position: relative;
       overflow: hidden;
+      box-shadow: 0 8px 32px rgba(0, 0, 0, 0.4), inset 0 1px 0 rgba(255, 255, 255, 0.1);
     }
+    
+    /* Animated background elements */
     header::before {
       content: '';
       position: absolute;
       top: -50%;
       right: -10%;
-      width: 400px;
-      height: 400px;
-      background: rgba(255,255,255,0.05);
+      width: 600px;
+      height: 600px;
+      background: radial-gradient(circle, rgba(212, 165, 116, 0.08) 0%, transparent 70%);
       border-radius: 50%;
       pointer-events: none;
+      animation: float 8s ease-in-out infinite;
     }
+    
+    header::after {
+      content: '';
+      position: absolute;
+      bottom: -30%;
+      left: -5%;
+      width: 500px;
+      height: 500px;
+      background: radial-gradient(circle, rgba(90, 46, 31, 0.12) 0%, transparent 70%);
+      border-radius: 50%;
+      pointer-events: none;
+      animation: float 10s ease-in-out infinite reverse;
+    }
+    
+    @keyframes float {
+      0%, 100% {
+        transform: translateY(0px);
+      }
+      50% {
+        transform: translateY(20px);
+      }
+    }
+    
+    @keyframes glow {
+      0%, 100% {
+        text-shadow: 0 0 20px rgba(212, 165, 116, 0.3), 2px 2px 4px rgba(0, 0, 0, 0.5);
+      }
+      50% {
+        text-shadow: 0 0 30px rgba(212, 165, 116, 0.5), 2px 2px 4px rgba(0, 0, 0, 0.5);
+      }
+    }
+    
+    .header-container {
+      position: relative;
+      z-index: 2;
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      gap: 20px;
+    }
+    
     header img {
-      max-width: 280px;
+      max-width: 200px;
       height: auto;
       display: block;
-      margin: 0 auto 20px;
-      filter: drop-shadow(0 6px 12px rgba(0,0,0,0.2));
-      transition: transform 0.3s ease;
+      filter: drop-shadow(0 8px 24px rgba(0, 0, 0, 0.4)) drop-shadow(0 0 30px rgba(212, 165, 116, 0.15));
+      transition: transform 0.4s cubic-bezier(0.34, 1.56, 0.64, 1), filter 0.4s ease;
       position: relative;
-      z-index: 1;
+      z-index: 3;
     }
+    
     header img:hover {
-      transform: scale(1.05);
+      transform: scale(1.1) translateY(-8px);
+      filter: drop-shadow(0 12px 32px rgba(0, 0, 0, 0.5)) drop-shadow(0 0 40px rgba(212, 165, 116, 0.25));
     }
+    
+    .header-text-wrapper {
+      position: relative;
+      z-index: 2;
+    }
+    
     header h1 {
       margin: 0;
-      font-size: 2em;
+      font-size: 2.8em;
+      font-weight: 800;
+      font-family: 'Poppins', sans-serif;
       color: #fff;
-      font-weight: 700;
-      letter-spacing: 1px;
-      text-shadow: 2px 2px 4px rgba(0,0,0,0.3);
-      position: relative;
-      z-index: 1;
+      letter-spacing: 2px;
+      animation: glow 3s ease-in-out infinite;
+      background: linear-gradient(135deg, #fff 0%, #d4a574 50%, #f0e6d2 100%);
+      -webkit-background-clip: text;
+      -webkit-text-fill-color: transparent;
+      background-clip: text;
     }
+    
     header p {
       margin: 8px 0 0 0;
+      color: #d4a574;
+      font-size: 1em;
+      font-weight: 500;
+      letter-spacing: 3px;
+      text-transform: uppercase;
+      font-family: 'Inter', sans-serif;
+      transition: color 0.3s ease;
+    }
+    
+    header:hover p {
       color: #f0e6d2;
-      font-size: 1.1em;
-      font-style: italic;
+    }
+    
+    .header-accent {
+      width: 80px;
+      height: 3px;
+      background: linear-gradient(90deg, transparent, #d4a574, transparent);
+      margin: 12px auto 0;
+      border-radius: 2px;
+      animation: expandWidth 2s ease-in-out infinite;
+    }
+    
+    @keyframes expandWidth {
+      0%, 100% {
+        width: 80px;
+      }
+      50% {
+        width: 120px;
+      }
+    }
+    
+    nav {
+      background-color: rgba(26, 26, 26, 0.95);
+      padding: 15px 20px;
+      text-align: center;
+      border-top: 2px solid #d4a574;
+      backdrop-filter: blur(10px);
+      box-shadow: 0 4px 16px rgba(0, 0, 0, 0.3);
       position: relative;
       z-index: 1;
     }
-    nav {
-      background-color: #5a2e1f;
-      padding: 10px;
-      text-align: center;
-      border-top: 3px solid #d4a574;
-    }
+    
     nav a {
-      color: #fff;
-      margin: 0 15px;
+      color: #f0e6d2;
+      margin: 0 20px;
       text-decoration: none;
-      font-weight: bold;
-      transition: color 0.3s ease;
+      font-weight: 600;
+      font-size: 0.95em;
+      transition: all 0.3s ease;
+      position: relative;
+      padding-bottom: 4px;
     }
+    
+    nav a::after {
+      content: '';
+      position: absolute;
+      bottom: 0;
+      left: 0;
+      width: 0;
+      height: 2px;
+      background: linear-gradient(90deg, #d4a574, #f0e6d2);
+      transition: width 0.3s ease;
+    }
+    
     nav a:hover {
       color: #d4a574;
     }
+    
+    nav a:hover::after {
+      width: 100%;
+    }
+    
     .hero {
       background: url('https://images.unsplash.com/photo-1546484396-fb3fc6f95f98?w=1200&h=400&fit=crop') center/cover no-repeat;
       color: #fff;
@@ -389,6 +495,23 @@
 
     /* Mobile Responsive Styles */
     @media (max-width: 768px) {
+      header {
+        padding: 40px 20px;
+      }
+      
+      header h1 {
+        font-size: 2.2em;
+        letter-spacing: 1px;
+      }
+      
+      header img {
+        max-width: 150px;
+      }
+      
+      header p {
+        font-size: 0.85em;
+      }
+      
       .hero h1 {
         font-size: 2em;
       }
@@ -408,7 +531,7 @@
       }
       nav a {
         margin: 0 10px;
-        font-size: 0.9em;
+        font-size: 0.85em;
       }
       #contact h2 {
         font-size: 1.5em;
@@ -434,6 +557,24 @@
     }
 
     @media (max-width: 480px) {
+      header {
+        padding: 30px 15px;
+      }
+      
+      header h1 {
+        font-size: 1.8em;
+        letter-spacing: 1px;
+      }
+      
+      header img {
+        max-width: 120px;
+      }
+      
+      header p {
+        font-size: 0.75em;
+        letter-spacing: 2px;
+      }
+      
       .modal-content {
         padding: 15px;
         max-width: 100%;
@@ -455,7 +596,7 @@
       }
       nav a {
         margin: 0 8px;
-        font-size: 0.8em;
+        font-size: 0.75em;
       }
       .service-card {
         width: 100%;
@@ -498,9 +639,14 @@
 <body>
 
   <header>
-    <img src="logo.png" alt="Zerca's SIMPLSYA Grill & Restaurant Logo">
-    <h1>ZERCA'S SIMPLSYA</h1>
-    <p>Grill & Restaurant</p>
+    <div class="header-container">
+      <img src="logo.png" alt="Zerca's SIMPLSYA Grill & Restaurant Logo">
+      <div class="header-text-wrapper">
+        <h1>ZERCA'S SIMPLSYA</h1>
+        <div class="header-accent"></div>
+        <p>Grill & Restaurant</p>
+      </div>
+    </div>
   </header>
 
   <nav>
@@ -519,12 +665,12 @@
     <h2>About Us</h2>
     
     <div class="about-intro">
-      Zerca's SIMPLSYA Grill & Restaurant is a rustic, welcoming dining space in Cabuyao, Laguna that embodies the Filipino value of simplicity—serving straightforward, delicious food and drinks des[...]
+      Zerca's SIMPLSYA Grill & Restaurant is a rustic, welcoming dining space in Cabuyao, Laguna that embodies the Filipino value of simplicity—serving straightforward, delicious food and drinks with friends and family.
     </div>
 
     <div class="about-overview">
       <h3>🌟 Our Story</h3>
-      <p>Zerca's SIMPLSYA Grill & Restaurant is built on the philosophy of simplicity with elegance. The name SIMPLSYA reflects our vision: creating a dining experience that is easy, relaxed, and memo[...]
+      <p>Zerca's SIMPLSYA Grill & Restaurant is built on the philosophy of simplicity with elegance. The name SIMPLSYA reflects our vision: creating a dining experience that is easy, relaxed, and memorable for everyone.
       
       <div class="about-details">
         <p><strong>📍 Location:</strong> Cabuyao, Laguna, Philippines</p>
@@ -583,35 +729,35 @@
     <h2>Grazing Table Gallery</h2>
     <p>Click any image to view full details</p>
     <div class="gallery">
-      <div class="gallery-item" onclick="openModal('Combination.jpg', 'Combination Platter', 'A Generous Feast for Every Celebration\n\nIndulge in a thoughtfully curated spread designed to delight large gatherings. This feast brings together the comforting flavors of savory street‑style favorites, the elegance of premium grazing selections, the heartiness of mini sliders, the sweetness of traditional kakanin, and the refreshment of carefully chosen beverages.\n\nEvery bite offers a balance of taste and texture—crispy, creamy, savory, and sweet—ensuring that guests experience variety without compromise. From nostalgic Filipino classics to modern grazing indulgences, this combination is crafted to satisfy diverse palates and elevate any occasion.\n\nWhether it\'s a milestone celebration, corporate event, or family gathering, this feast embodies abundance, harmony, and festive spirit—making it the perfect choice for those who want both tradition and innovation on the table.')">
+      <div class="gallery-item" onclick="openModal('Combination.jpg', 'Combination Platter', 'A Generous Feast for Every Celebration\n\nIndulge in a thoughtfully curated spread designed to delight large groups and celebrate any occasion with our signature combination platter.')">
         <img src="Combination.jpg" alt="Combination platter">
         <div class="gallery-description">
           <h3>Combination Platter</h3>
           <p>A delightful mix of our signature grilled meats, fresh vegetables, and artisan cheeses—perfect for sharing and sampling diverse flavors.</p>
         </div>
       </div>
-      <div class="gallery-item" onclick="openModal('Filipino Kakanin.jpg', 'Filipino Kakanin', 'Celebrate tradition with a vibrant spread of Filipino rice delicacies, beautifully arranged to delight guests of all ages. Featuring an assortment of favorites such as maja blanca, sapin‑sapin, kalamay, ube, puto biñan, assorted puto, kutsinta, and suman, this table brings together the comforting sweetness and rich textures of classic kakanin. Perfectly paired with Kapeng Barako or refreshing juices, the Kakanin Table adds warmth, nostalgia, and festive charm to any occasion. Whether for birthdays, weddings, or corporate gatherings, it offers a taste of heritage and a touch of indulgence in every bite.')">
+      <div class="gallery-item" onclick="openModal('Filipino Kakanin.jpg', 'Filipino Kakanin', 'Celebrate tradition with a vibrant spread of Filipino rice delicacies, beautifully arranged to delight guests and bring authentic flavors to your event.')">
         <img src="Filipino Kakanin.jpg" alt="Filipino kakanin desserts">
         <div class="gallery-description">
           <h3>Filipino Kakanin</h3>
           <p>Authentic Filipino sweet treats and traditional pastries that bring warmth and nostalgia to your celebration. Perfect complement to any grazing spread.</p>
         </div>
       </div>
-      <div class="gallery-item" onclick="openModal('Grazing.jpg', 'Elegant Grazing Table', 'An elegant centerpiece designed for sharing and entertaining, the Grazing Table showcases a rich selection of premium bites beautifully arranged for guests to enjoy. Featuring assorted cheeses, cold cuts, and cured meats, paired with artisan breads, spreads, and seasonal fruits, it offers a perfect balance of savory and sweet. Complemented by crunchy pretzels, assorted crackers, nuts, and indulgent desserts like brownies and macarons, this spread invites guests to mix, match, and savor every flavor. Ideal for weddings, corporate events, birthdays, or intimate gatherings, the Grazing Table brings sophistication, abundance, and variety—making every occasion feel festive and memorable.')">
+      <div class="gallery-item" onclick="openModal('Grazing.jpg', 'Elegant Grazing Table', 'An elegant centerpiece designed for sharing and entertaining, the Grazing Table showcases a rich selection of premium items perfect for upscale events.')">
         <img src="Grazing.jpg" alt="Elegant grazing table">
         <div class="gallery-description">
           <h3>Elegant Grazing Table</h3>
           <p>Our signature grazing experience featuring an impressive selection of cured meats, fresh fruits, artisan breads, and gourmet spreads—ideal for upscale events.</p>
         </div>
       </div>
-      <div class="gallery-item" onclick="openModal('Slider.jpg', 'Gourmet Sliders', 'A fun and satisfying assortment of bite‑sized favorites, perfect for sharing at any gathering. The Sliders Table features a mix of mini burgers, hotdog sandwiches, ham & cheese sliders, and chicken sandwiches, paired with nachos topped with cheese dip and salsa, plus seasonal fresh fruits for a refreshing balance. To complete the spread, guests can enjoy their choice of juice or freshly brewed Kapeng Barako, making this table both hearty and inviting. Ideal for birthdays, casual parties, or corporate events, the Sliders Table offers variety, comfort, and flavor in every bite—bringing together familiar classics in a festive, shareable style.')">
+      <div class="gallery-item" onclick="openModal('Slider.jpg', 'Gourmet Sliders', 'A fun and satisfying assortment of bite‑sized favorites, perfect for sharing at any gathering. The Sliders Table brings joy and flavor in every bite.')">
         <img src="Slider.jpg" alt="Gourmet sliders">
         <div class="gallery-description">
           <h3>Gourmet Sliders</h3>
           <p>Bite-sized perfection! Our mini sliders showcase tender, grilled meats with fresh toppings—a crowd-pleasing favorite for any gathering.</p>
         </div>
       </div>
-      <div class="gallery-item" onclick="openModal('Tusok-Tusok.jpg', 'Tusok-Tusok Skewers', 'Bring the lively spirit of the streets to your celebration with a vibrant Tusok‑Tusok spread. Featuring crowd‑pleasing favorites like fish balls, squid balls, kikiam, and tokneneng, paired with crispy French fries and refreshing juice, this table captures the fun and flavor of classic Filipino street food. Served with our signature Manong’s Sauce and Suka, every bite is a nostalgic treat that guests can enjoy together. Perfect for birthdays, casual parties, or themed events, the Tusok‑Tusok Table adds a playful, festive touch to any occasion—combining comfort, variety, and the unmistakable joy of street‑style dining.')">
+      <div class="gallery-item" onclick="openModal('Tusok-Tusok.jpg', 'Tusok-Tusok Skewers', 'Bring the lively spirit of the streets to your celebration with a vibrant Tusok‑Tusok spread. Featuring authentic Filipino street food on skewers.')">
         <img src="Tusok-Tusok.jpg" alt="Tusok-tusok skewers">
         <div class="gallery-description">
           <h3>Tusok-Tusok Skewers</h3>
