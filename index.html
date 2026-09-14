@@ -92,6 +92,82 @@
       max-width: 1000px;
       margin: auto;
     }
+    #about {
+      background-color: #fff;
+      border-radius: 8px;
+      box-shadow: 0 2px 8px rgba(0,0,0,0.1);
+    }
+    #about h2 {
+      color: #5a2e1f;
+      font-size: 2.2em;
+      margin-bottom: 30px;
+      border-bottom: 3px solid #d4a574;
+      padding-bottom: 15px;
+    }
+    .about-intro {
+      font-size: 1.15em;
+      line-height: 1.8;
+      color: #333;
+      margin-bottom: 30px;
+      font-weight: 500;
+      background-color: #fef8f0;
+      padding: 20px;
+      border-left: 5px solid #d4a574;
+      border-radius: 4px;
+    }
+    .about-overview {
+      margin: 30px 0;
+    }
+    .about-overview h3 {
+      color: #5a2e1f;
+      font-size: 1.4em;
+      margin-bottom: 15px;
+      display: flex;
+      align-items: center;
+      gap: 10px;
+    }
+    .about-overview p {
+      line-height: 1.8;
+      color: #555;
+      margin: 10px 0;
+    }
+    .about-details {
+      background-color: #fef8f0;
+      padding: 20px;
+      border-radius: 8px;
+      margin: 15px 0;
+    }
+    .about-details strong {
+      color: #5a2e1f;
+    }
+    .mission-vision-container {
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      gap: 30px;
+      margin-top: 40px;
+    }
+    .mission-box, .vision-box {
+      background-color: #fef8f0;
+      padding: 25px;
+      border-radius: 8px;
+      border-top: 5px solid #d4a574;
+    }
+    .mission-box h3, .vision-box h3 {
+      color: #5a2e1f;
+      font-size: 1.5em;
+      margin-top: 0;
+      display: flex;
+      align-items: center;
+      gap: 10px;
+    }
+    .mission-box ul, .vision-box ul {
+      list-style-position: inside;
+      line-height: 2;
+      color: #555;
+    }
+    .mission-box li, .vision-box li {
+      margin: 10px 0;
+    }
     .services {
       display: flex;
       justify-content: space-around;
@@ -306,6 +382,12 @@
       #contact p {
         font-size: 1em;
       }
+      .mission-vision-container {
+        grid-template-columns: 1fr;
+      }
+      #about h2 {
+        font-size: 1.8em;
+      }
     }
 
     @media (max-width: 480px) {
@@ -342,6 +424,15 @@
       #contact p {
         font-size: 0.95em;
       }
+      .mission-vision-container {
+        grid-template-columns: 1fr;
+      }
+      .about-intro {
+        font-size: 1em;
+      }
+      .mission-box h3, .vision-box h3 {
+        font-size: 1.2em;
+      }
     }
   </style>
 </head>
@@ -367,7 +458,48 @@
 
   <section id="about" class="section">
     <h2>About Us</h2>
-    <p>SIMPLSYA is a word that represents our vision of simplicity. We aim to offer a straightforward, welcoming space where you can enjoy simple, delicious food and drinks with friends and family.</p>
+    
+    <div class="about-intro">
+      Zerca's SIMPLSYA Grill & Restaurant is a rustic, welcoming dining space in Cavite that embodies the Filipino value of simplicity—serving straightforward, delicious food and drinks designed for family and friends to enjoy together.
+    </div>
+
+    <div class="about-overview">
+      <h3>🌟 Our Story</h3>
+      <p>Zerca's SIMPLSYA Grill & Restaurant is built on the philosophy of simplicity with elegance. The name SIMPLSYA reflects our vision: creating a dining experience that is easy, relaxed, and memorable. We specialize in grilled dishes, grazing tables, and mobile bar services, offering guests not just food, but a warm and inviting atmosphere where connections thrive.</p>
+      
+      <div class="about-details">
+        <p><strong>📍 Location:</strong> Imus, Cavite, Philippines</p>
+        <p><strong>🍽️ Services:</strong> Grazing Table, Mobile Bar, Restaurant Dining</p>
+        <p><strong>🏠 Ambiance:</strong> Rustic, cozy, and family-friendly</p>
+        <p><strong>⭐ Specialty:</strong> Simple yet flavorful Filipino-inspired dishes, complemented by refreshing beverages</p>
+      </div>
+      
+      <p style="font-style: italic; color: #666;">Our restaurant is more than a place to eat—it's a space where people gather, celebrate, and enjoy life's simple pleasures.</p>
+    </div>
+
+    <div class="mission-vision-container">
+      <div class="mission-box">
+        <h3>🎯 Our Mission</h3>
+        <p style="margin-bottom: 20px;">To provide a straightforward and welcoming dining experience where simplicity meets flavor. We are committed to:</p>
+        <ul style="padding-left: 20px;">
+          <li>Serving delicious, freshly prepared food that highlights Filipino culinary traditions</li>
+          <li>Creating a relaxed environment where families and friends can connect</li>
+          <li>Offering professional catering services (grazing tables and mobile bars) that bring our rustic charm to any event</li>
+          <li>Ensuring quality, affordability, and consistency in every dish and service we provide</li>
+        </ul>
+      </div>
+
+      <div class="vision-box">
+        <h3>🌈 Our Vision</h3>
+        <p style="margin-bottom: 20px;">To be the go-to destination in Cavite for rustic dining and event services, recognized for simplicity, warmth, and authentic flavors. We envision:</p>
+        <ul style="padding-left: 20px;">
+          <li>A restaurant that celebrates Filipino hospitality through food and service</li>
+          <li>Expanding our reach by offering mobile bar and grazing table services to more communities</li>
+          <li>Becoming a trusted brand in the local dining scene, known for balancing elegance with simplicity</li>
+          <li>Building lasting relationships with customers who value authentic, memorable dining experiences</li>
+        </ul>
+      </div>
+    </div>
   </section>
 
   <section id="services" class="section">
