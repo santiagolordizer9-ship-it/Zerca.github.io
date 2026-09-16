@@ -372,7 +372,7 @@
     z-index: 2;
 }
     
-      .service-card3 {
+.service-card3 {
     position: relative;
     color: #fff;
     border: 2px solid #ddd;
@@ -412,6 +412,87 @@
     position: relative;
     z-index: 2;
 }
+    .service-card4 {
+    position: relative;
+    color: #fff;
+    border: 2px solid #ddd;
+    border-radius: 8px;
+    width: 250px;
+    margin: 15px;
+    padding: 20px;
+    text-align: center;
+    box-shadow: 2px 2px 6px rgba(0,0,0,0.1);
+    overflow: hidden; /* keeps overlay inside */
+}
+
+/* Background image layer */
+.service-card4::before {
+    content: "";
+    position: absolute;
+    top: 0; left: 0; right: 0; bottom: 0;
+    background-image: url('Paluto.png');
+    background-size: cover;
+    background-repeat: no-repeat;
+    background-position: center;
+    opacity: 0.5; /* image transparency */
+    z-index: 0;
+}
+
+/* Dark overlay layer */
+.service-card4::after {
+    content: "";
+    position: absolute;
+    top: 0; left: 0; right: 0; bottom: 0;
+    background: rgba(0,0,0,0.3); /* subtle dark overlay */
+    z-index: 1;
+}
+
+/* Text stays above everything */
+.service-card4 * {
+    position: relative;
+    z-index: 2;
+}
+.service-card5 {
+    position: relative;
+    color: #fff;
+    border: 2px solid #ddd;
+    border-radius: 8px;
+    width: 250px;
+    margin: 15px;
+    padding: 20px;
+    text-align: center;
+    box-shadow: 2px 2px 6px rgba(0,0,0,0.1);
+    overflow: hidden; /* keeps overlay inside */
+}
+
+/* Background image layer */
+.service-card5::before {
+    content: "";
+    position: absolute;
+    top: 0; left: 0; right: 0; bottom: 0;
+    background-image: url('Bilao.png');
+    background-size: cover;
+    background-repeat: no-repeat;
+    background-position: center;
+    opacity: 0.5; /* image transparency */
+    z-index: 0;
+}
+
+/* Dark overlay layer */
+.service-card5::after {
+    content: "";
+    position: absolute;
+    top: 0; left: 0; right: 0; bottom: 0;
+    background: rgba(0,0,0,0.3); /* subtle dark overlay */
+    z-index: 1;
+}
+
+/* Text stays above everything */
+.service-card5 * {
+    position: relative;
+    z-index: 2;
+}
+
     /* Services Section */
     #services {
       background-color: #fff;
@@ -916,13 +997,13 @@
         <h3>🍴 Restaurant</h3>
         <p>Rustic dining with signature grilled dishes.</p>
       </div>
-      <div class="service-card0">
+      <div class="service-card4">
         <h3>🍴 Paluto | Food Tray | Bento Meals</h3>
-        <p> Freshly cooked Filipino favorites served your way — from hearty trays for sharing to convenient bento meals perfect for any occasion.</p>
+        <p> Filipino favorites made fresh — from shareable trays to bento meals for any occasion.</p>
       </div>
-       <div class="service-card0">
+       <div class="service-card5">
         <h3>🍴 Bilao Package</h3>
-        <p> A festive Filipino feast featuring smoky grilled meats, fresh seafood, and classic pancit or spaghetti — perfect for sharing and celebrations..</p>
+        <p> “A festive Filipino feast of smoky grills, fresh seafood, and classic noodles — perfect for sharing.</p>
       </div>
     </div>
   </section>
