@@ -292,20 +292,45 @@
       box-shadow: 2px 2px 6px rgba(0,0,0,0.1);
     }
     .service-card1 {
-    background-image: url('Grazing Table Logo.png'); /* replace with your image path */
-    background-size: cover;       /* ensures the image covers the card */
-    background-repeat: no-repeat;
-    background-position: center;  /* keeps the focus centered */
-    color: #fff;   
+    position: relative;
+    color: #fff;
     border: 2px solid #ddd;
     border-radius: 8px;
     width: 250px;
-    margin: 15px; /* makes text readable on darker backgrounds */
+    margin: 15px;
     padding: 20px;
     text-align: center;
     box-shadow: 2px 2px 6px rgba(0,0,0,0.1);
-    border-radius: 8px;
-    }
+    overflow: hidden; /* keeps overlay inside */
+}
+
+/* Background image layer */
+.service-card1::before {
+    content: "";
+    position: absolute;
+    top: 0; left: 0; right: 0; bottom: 0;
+    background-image: url('Grazing Table Logo.png');
+    background-size: cover;
+    background-repeat: no-repeat;
+    background-position: center;
+    opacity: 0.5; /* image transparency */
+    z-index: 0;
+}
+
+/* Dark overlay layer */
+.service-card1::after {
+    content: "";
+    position: absolute;
+    top: 0; left: 0; right: 0; bottom: 0;
+    background: rgba(0,0,0,0.3); /* subtle dark overlay */
+    z-index: 1;
+}
+
+/* Text stays above everything */
+.service-card1 * {
+    position: relative;
+    z-index: 2;
+}
     /* Services Section */
     #services {
       background-color: #fff;
