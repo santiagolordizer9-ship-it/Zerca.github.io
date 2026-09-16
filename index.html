@@ -331,6 +331,46 @@
     position: relative;
     z-index: 2;
 }
+      .service-card2 {
+    position: relative;
+    color: #fff;
+    border: 2px solid #ddd;
+    border-radius: 8px;
+    width: 250px;
+    margin: 15px;
+    padding: 20px;
+    text-align: center;
+    box-shadow: 2px 2px 6px rgba(0,0,0,0.1);
+    overflow: hidden; /* keeps overlay inside */
+}
+
+/* Background image layer */
+.service-card2::before {
+    content: "";
+    position: absolute;
+    top: 0; left: 0; right: 0; bottom: 0;
+    background-image: url('Mobile Bar Logo.png');
+    background-size: cover;
+    background-repeat: no-repeat;
+    background-position: center;
+    opacity: 0.5; /* image transparency */
+    z-index: 0;
+}
+
+/* Dark overlay layer */
+.service-card2::after {
+    content: "";
+    position: absolute;
+    top: 0; left: 0; right: 0; bottom: 0;
+    background: rgba(0,0,0,0.3); /* subtle dark overlay */
+    z-index: 1;
+}
+
+/* Text stays above everything */
+.service-card2 * {
+    position: relative;
+    z-index: 2;
+}
     /* Services Section */
     #services {
       background-color: #fff;
@@ -827,7 +867,7 @@
         <h3>🥗 Grazing Table</h3>
         <p>Elegant spreads for events and celebrations.</p>
       </div>
-      <div class="service-card0">
+      <div class="service-card2">
         <h3>🍸 Mobile Bar</h3>
         <p>Refreshing cocktails and beverages on the go.</p>
       </div>
